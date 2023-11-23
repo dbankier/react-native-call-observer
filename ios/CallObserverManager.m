@@ -43,7 +43,7 @@ RCT_EXPORT_MODULE();
 - (void)callObserver:(nonnull CXCallObserver *)callObserver callChanged:(nonnull CXCall *)call {
   if(hasListeners){
     //incoming
-    if (call != nil && call.isOutgoing == NO  && call.hasConnected == NO && call.hasEnded == NOs) {
+    if (call != nil && call.isOutgoing == NO  && call.hasConnected == NO && call.hasEnded == NO) {
       [self sendEventWithName:@"callObserver" body:@{@"callStatus": @"incoming"}];
     }
 
